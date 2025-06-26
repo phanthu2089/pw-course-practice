@@ -1,4 +1,4 @@
-let number = 0
+let number = 10
 if (number>0) {console.log("giá trị bạn nhập là số dương")};
 if(number<0){console.log("giá trị bạn nhập là số âm")};
 if(number==0){console.log("giá trị bạn nhập là số 0")};

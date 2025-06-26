@@ -1,0 +1,1 @@
+for (let x = 1; x <=100; x+=4) {console.log(x)};

@@ -1,4 +1,4 @@
 git init : khởi tạo 1 project
 git add <file_name> : add 1 file lên staging
 git add . : add toàn bộ file
-git commit -m"message" : đẩy dữ liệu lên repo + kèm message (nên có convention)
+git commit -m"message" : đẩy dữ liệu lên repo + kèm message (nên có convention )
