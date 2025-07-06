@@ -1,0 +1,142 @@
+🧪 Bài 1 – In vị trí và giá trị các phần tử
+
+let arr = [5, 10, 15, 20];
+
+for (let [index, val] of arr.entries()) {
+  console.log(`Phần tử ở vị trí ${index} là ${val}`);
+}
+🎯 Output mong muốn:
+
+Phần tử ở vị trí 0 là 5
+Phần tử ở vị trí 1 là 10
+...
+✅ Bạn thử chạy và xác nhận giúp em!
+
+🔍 Bài 2 – Tìm phần tử đầu tiên chia hết cho 4
+
+let arr = [7, 13, 20, 5, 8];
+
+for (let [index, val] of arr.entries()) {
+  if (val % 4 === 0) {
+    console.log(`Phần tử ${val} ở vị trí ${index} chia hết cho 4`);
+    break;
+  }
+}
+✅ Output mong muốn:
+Phần tử 20 ở vị trí 2 chia hết cho 4
+
+🧠 Bài 3 – In tất cả các phần tử ở vị trí chẵn
+
+let arr = [100, 200, 300, 400, 500];
+
+for (let [index, val] of arr.entries()) {
+  if (index % 2 === 0) {
+    console.log(`Vị trí ${index} có giá trị ${val}`);
+  }
+}
+👉 Output: 100 (vị trí 0), 300 (vị trí 2), 500 (vị trí 4)
+
+✍️ Bài 4 – Đếm số phần tử lớn hơn 10
+
+let arr = [3, 12, 20, 7, 33];
+let count = 0;
+
+for (let [, val] of arr.entries()) {
+  if (val > 10) {
+    count++;
+  }
+}
+
+console.log(`Có ${count} phần tử > 10`);
+🧩 Bài 5 – Tính tổng chỉ các phần tử tại vị trí lẻ
+let arr = [1, 2, 3, 4, 5];
+let sum = 0;
+
+for (let [index, val] of arr.entries()) {
+  if (index % 2 !== 0) {
+    sum += val;
+  }
+}
+
+console.log(`Tổng các phần tử ở vị trí lẻ: ${sum}`);
+
+
+
+
+Bạn :
+const arr = [1, 2, 3, 1, 2, 4, 5];
+let count = {};
+
+arr.forEach((element) => {
+  count[element] = (count[element] || 0) + 1;
+});
+//console.log(count);
+
+const arrUnique = arr.filter((element) => count[element] === 1);
+console.log(arrUnique);
+
+
+giải thích chi tiết:
+
+📄 Toàn bộ code:
+javascript
+Sao chép
+Chỉnh sửa
+const arr = [1, 2, 3, 1, 2, 4, 5];
+let count = {};
+
+arr.forEach((element) => {
+  count[element] = (count[element] || 0) + 1;
+});
+
+const arrUnique = arr.filter((element) => count[element] === 1);
+console.log(arrUnique);
+🧠 Giải thích từng phần:
+✅ 1. let count = {};
+Khởi tạo 1 object rỗng để đếm số lần xuất hiện của mỗi phần tử trong mảng.
+
+✅ 2. arr.forEach((element) => { ... })
+Duyệt từng phần tử trong mảng arr.
+
+javascript
+Sao chép
+Chỉnh sửa
+count[element] = (count[element] || 0) + 1;
+Nếu count[element] chưa tồn tại ⇒ dùng 0.
+
+Sau đó cộng thêm 1.
+
+🔍 Kết quả của object count sau khi chạy:
+
+javascript
+Sao chép
+Chỉnh sửa
+{
+  1: 2, // số 1 xuất hiện 2 lần
+  2: 2,
+  3: 1,
+  4: 1,
+  5: 1
+}
+✅ 3. arr.filter((element) => count[element] === 1)
+Lọc ra những phần tử trong mảng arr mà chỉ xuất hiện đúng 1 lần.
+
+Dựa trên dữ liệu trong object count.
+
+✅ 4. console.log(arrUnique)
+In ra mảng mới gồm các phần tử duy nhất.
+
+🔚 Kết quả in ra sẽ là:
+
+javascript
+Sao chép
+Chỉnh sửa
+[3, 4, 5]
+Vì chỉ có 3, 4, 5 là xuất hiện đúng 1 lần trong mảng gốc.
+
+📌 Tổng kết:
+Thành phần	Mục đích
+count	Đếm số lần xuất hiện của mỗi phần tử
+forEach	Duyệt qua từng phần tử và cập nhật count
+filter	Lọc ra phần tử chỉ xuất hiện đúng 1 lần
+arrUnique	Mảng kết quả cuối cùng

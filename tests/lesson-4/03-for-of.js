@@ -65,6 +65,16 @@ for (let i = arr7.length - 1; i >= 0; i--) {
 };
 console.log(arr8);
 
+// chữa bài 2:
+//cách 1:
+let str = "playwright";
+let reversedArray = [];
+for (let char of str) {    // for .. of biến mới <char> sẽ duyệt lần lượt các giá trị của chuỗi "playwright"
+    reversedArray.unshift(char) // push thứ tự từ sau ra trước mảng > đọc đến p > ghi cuối. l đẩy dần nhau
+}
+console.log(reversedArray);
+
+
 /**
 3. Lọc ra tất cả các phần tử duy nhất trong một mảng. Ví dụ với mảng [1, 2, 3,
 1, 2, 4, 5] thì các phần tử duy nhất (xuất hiện 1 lần) là: [3, 4, 5]
@@ -78,3 +88,62 @@ arr2.forEach((value) => {
     }
 });
 console.log(result);
+// lặp các phần tử chỉ xuất hiện 1 lần duy nhất
+let arr = [1,2,3,1,2,4,5];
+const map = {};
+const result = [];
+for (let element of arr) {
+    map[element] = (map[element]|| 0) + 1; // sao biết trả về string hay number để dùng giá trị của nó sử dụng
+    // có 2 cách lấy giá trị 'value' lấy dấu chấm
+    //value lấy bằng mọc nhọn []
+    // key mặc định của object kà string
+}
+// mục đích vòng for gán cho element 1 giá trị tạm để so sánh , mỗi lần xuất hiện sẽ cộng thêm 1
+for (let element in map) {
+    if (map[element]===1) {
+        result.push(Number(element)) // object thì luôn luôn là string > push theo kiểu "number" => ép kiểu  (number(tenbien))
+    }
+}
+console.log(result);
+console.log(map);
+
+// for in >  lặp xong thao tác trên "key" của nó
+// for of > lặp xong thao tác trên "value" của nó
+// forEach> lấy value, index
+
+/*const { console } = require("inspector");
+
+const number = [1, 2, 3, 1, 2, 4, 5];
+const result = [];
+for (let element of number) {
+    if (number.indexOf(element) === number.lastIndexOf(element)) {
+        result.push(element)
+    }
+}
+
+console.log(result);
+*/
+
+const arr = [1, 2, 3, 1, 2, 4, 5];
+function findUniqueElements(arr) {
+    // lọc qua phần tử > keỉem tra số lần xuấthiene
+    // count + lọc thì + thêm 1
+    // kiểm tra nếu phần từ chỉ xuất hiện 1 lần hay count =1 thì push vào mảng kết quả
+    let result = [];
+    for (let num of arr) {
+        let count = 0;
+        for (let x of arr) {
+            if (num === x) {
+                count++;
+            }
+        }
+        if (count === 1) {
+            result.push(num)
+        }
+
+    }
+     return result;
+
+}
+let uniqueElements = findUniqueElements(arr);
+console.log(uniqueElements);
