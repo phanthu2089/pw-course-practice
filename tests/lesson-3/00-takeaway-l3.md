@@ -48,9 +48,11 @@ object : Đối tượng dùng để lưu trữ tập hợp các giá trị vào
 2. cú pháp const arr = [1,2,3,4];
 3. xem độ dài của mảng : **tênbien.length**
 4. Lấy phần tử theo index : tenbien[0]
+5. thêm phần tử vào mảng dùng hàm push name_arr.push(gia_tri)
 ## Function :
 Function : hàm là đoạn code được đặt tên và có thể tái sử dụng được, thực hiện 1 nhiệm vụ cụ thể hoặc tính toán cụ thể
 1. Khai báo : function <nameFunction>() {//code}
 2. sử dụng : <nameFunction>();
 ## Parameter
 Truyền tham số vào hàm function > khai báo tham số cần dùng ở hàm sử dụng ()
+
