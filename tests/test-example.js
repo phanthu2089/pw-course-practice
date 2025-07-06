@@ -1,13 +1,38 @@
-/**
-3. Lọc ra tất cả các phần tử duy nhất trong một mảng. Ví dụ với mảng [1, 2, 3,
-1, 2, 4, 5] thì các phần tử duy nhất (xuất hiện 1 lần) là: [3, 4, 5]
- */
-
-let arr2 = [1, 2, 3, 1, 2, 4, 5];
-let result = [];
-arr2.forEach((value) => {
-    if (arr2.indexOf(value) === arr2.lastIndexOf(value)) {
-result.push(value);
+//Chữa bài 1:
+/*
+const arrNumbers = [1,2,3,4,3,55,3,23];
+ function findIndex (arr, number) {
+    let firstIndex = -1;
+    let lastIndex = -1;
+    let index=0;
+    for (element of arr) {
+        if (element === number) {
+            if (firstIndex ===-1) {
+                firstIndex = index;
+            }
+            lastIndex = index
+        }
+        index ++
     }
-});
-console.log(result);
+    if (firstIndex === -1 && lastIndex === -1) {
+        console.log(`số ${number} không tồn tại trong mảng`);}
+        else {
+            console.log(`firstIndex : ${firstIndex} - lastIndex : ${lastIndex}`)
+        }
+    }
+
+ findIndex(arrNumbers,3);
+*/
+ // In ra các vị trí nó có
+  const arr1Numbers = [1,2,3,4,3,55,3,23];
+  const newArray =[];
+  function convertNewArray (number) {
+    for (let [index,val] of arr1Numbers.entries()) {
+        if(val===number) {
+            newArray.push(index);
+        }
+    }
+     return newArray;
+  }
+
+  console.log(convertNewArray(3));
