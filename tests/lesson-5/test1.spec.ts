@@ -1,0 +1,22 @@
+import { test } from "@playwright/test";
+//let isChecked;
+test("Navigate to playwright", async ({ page }) => {
+await page.goto("https://material.playwrightvn.com/");
+await page.locator("//a[contains(text() , 'Bài học 1: Register ')]").click();
+await page.locator("//input[@id='username']").fill( "Phan Thu");
+await page.locator("//input[@id='email']").fill("phanthu2089@gmail.com");
+await page.locator("//input[@id='male']").setChecked(true);
+await page.locator("//input[@id='reading']").setChecked(true);
+await page.locator("//select[@id='interests']").selectOption({value: "science"});
+await page.locator("//select[@id='country']").selectOption({value:"usa"});
+await page.locator("//input[@id='dob']").fill("2025-06-20");
+await page.locator("//input[@id='profile']").setInputFiles("data-test/hinh-nen-may-tinh-4k-7.jpg");
+await page.locator("//textarea[@id='bio']").fill("phan thu comment");
+await page.locator("//input[@id='rating']").fill("10");
+await page.locator("//input[@id='favcolor']").fill("#0091ff");
+await page.locator("//div[contains(text(), 'Hover over me')]").hover();
+await page.locator("//input[@id='newsletter']").setChecked(true);
+await page.locator("//span[@class='slider round']").setChecked(true);
+// await page.locator("//span[@id='starRatingValue']").fill("4");
+await page.locator("//button[@type='submit']").click();
+});
