@@ -1,0 +1,7 @@
+## 1. Hàm chờ khi load trang load xong
+page.goto('url', {waitUntil:'domcontentloaded'})
+2. lấy toàn bộ nội dung content trong xpath truyền vào
+page.locator('xpath').allTextContents()' > áp dụng truyền title và truyền content 
+3.nếu  muốn chọn theo text hiển thị thay vì title, dùng:
+//a[text()='Khoa học công nghệ']
+
